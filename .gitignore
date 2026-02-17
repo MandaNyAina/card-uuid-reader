@@ -19,3 +19,4 @@ out/
 .navigation/
 captures/
 output.json
+build/
