@@ -1,0 +1,163 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.cardreader.app"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-feature
+11-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:4:5-6:35
+12        android:name="android.hardware.nfc"
+12-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:5:9-44
+13        android:required="true" />
+13-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:6:9-32
+14
+15    <uses-permission android:name="android.permission.NFC" />
+15-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:8:5-62
+15-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:8:22-59
+16    <uses-permission
+16-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:9:5-10:38
+17        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+17-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:9:22-78
+18        android:maxSdkVersion="28" />
+18-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:10:9-35
+19
+20    <permission
+20-->[androidx.core:core:1.12.0] /Users/mandanyaina/.gradle/caches/transforms-3/2ccd268e0ca2e1cd10ec650ac8067a3e/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+21        android:name="com.cardreader.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+21-->[androidx.core:core:1.12.0] /Users/mandanyaina/.gradle/caches/transforms-3/2ccd268e0ca2e1cd10ec650ac8067a3e/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+22        android:protectionLevel="signature" />
+22-->[androidx.core:core:1.12.0] /Users/mandanyaina/.gradle/caches/transforms-3/2ccd268e0ca2e1cd10ec650ac8067a3e/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+23
+24    <uses-permission android:name="com.cardreader.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+24-->[androidx.core:core:1.12.0] /Users/mandanyaina/.gradle/caches/transforms-3/2ccd268e0ca2e1cd10ec650ac8067a3e/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+24-->[androidx.core:core:1.12.0] /Users/mandanyaina/.gradle/caches/transforms-3/2ccd268e0ca2e1cd10ec650ac8067a3e/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+25
+26    <application
+26-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:12:5-40:19
+27        android:allowBackup="true"
+27-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:13:9-35
+28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+28-->[androidx.core:core:1.12.0] /Users/mandanyaina/.gradle/caches/transforms-3/2ccd268e0ca2e1cd10ec650ac8067a3e/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+29        android:debuggable="true"
+30        android:extractNativeLibs="true"
+31        android:icon="@mipmap/ic_launcher"
+31-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:14:9-43
+32        android:label="@string/app_name"
+32-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:15:9-41
+33        android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+33-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:16:9-67
+34        <activity
+34-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:18:9-39:20
+35            android:name="com.cardreader.app.MainActivity"
+35-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:19:13-41
+36            android:exported="true"
+36-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:20:13-36
+37            android:launchMode="singleTop" >
+37-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:21:13-43
+38            <intent-filter>
+38-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:22:13-25:29
+39                <action android:name="android.intent.action.MAIN" />
+39-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:23:17-69
+39-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:23:25-66
+40
+41                <category android:name="android.intent.category.LAUNCHER" />
+41-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:24:17-77
+41-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:24:27-74
+42            </intent-filter>
+43            <intent-filter>
+43-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:27:13-30:29
+44                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+44-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:28:17-76
+44-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:28:25-73
+45
+46                <category android:name="android.intent.category.DEFAULT" />
+46-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:29:17-76
+46-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:29:27-73
+47            </intent-filter>
+48            <intent-filter>
+48-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:32:13-34:29
+49                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+49-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:33:17-77
+49-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:33:25-74
+50            </intent-filter>
+51
+52            <meta-data
+52-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:36:13-38:59
+53                android:name="android.nfc.action.TECH_DISCOVERED"
+53-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:37:17-66
+54                android:resource="@xml/nfc_tech_filter" />
+54-->/Users/mandanyaina/Projects/card-uuid-reader/app/src/main/AndroidManifest.xml:38:17-56
+55        </activity>
+56
+57        <provider
+57-->[androidx.emoji2:emoji2:1.2.0] /Users/mandanyaina/.gradle/caches/transforms-3/5bd09d469f39497674f99ddfe48d0ff2/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+58            android:name="androidx.startup.InitializationProvider"
+58-->[androidx.emoji2:emoji2:1.2.0] /Users/mandanyaina/.gradle/caches/transforms-3/5bd09d469f39497674f99ddfe48d0ff2/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+59            android:authorities="com.cardreader.app.androidx-startup"
+59-->[androidx.emoji2:emoji2:1.2.0] /Users/mandanyaina/.gradle/caches/transforms-3/5bd09d469f39497674f99ddfe48d0ff2/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+60            android:exported="false" >
+60-->[androidx.emoji2:emoji2:1.2.0] /Users/mandanyaina/.gradle/caches/transforms-3/5bd09d469f39497674f99ddfe48d0ff2/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+61            <meta-data
+61-->[androidx.emoji2:emoji2:1.2.0] /Users/mandanyaina/.gradle/caches/transforms-3/5bd09d469f39497674f99ddfe48d0ff2/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+62                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+62-->[androidx.emoji2:emoji2:1.2.0] /Users/mandanyaina/.gradle/caches/transforms-3/5bd09d469f39497674f99ddfe48d0ff2/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+63                android:value="androidx.startup" />
+63-->[androidx.emoji2:emoji2:1.2.0] /Users/mandanyaina/.gradle/caches/transforms-3/5bd09d469f39497674f99ddfe48d0ff2/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+64            <meta-data
+64-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/mandanyaina/.gradle/caches/transforms-3/b40b8a723d89bb221c4ba19bf2abf4cc/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+65                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+65-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/mandanyaina/.gradle/caches/transforms-3/b40b8a723d89bb221c4ba19bf2abf4cc/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+66                android:value="androidx.startup" />
+66-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/mandanyaina/.gradle/caches/transforms-3/b40b8a723d89bb221c4ba19bf2abf4cc/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+67            <meta-data
+67-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+68                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+68-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+69                android:value="androidx.startup" />
+69-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+70        </provider>
+71
+72        <receiver
+72-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+73            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+73-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+74            android:directBootAware="false"
+74-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+75            android:enabled="true"
+75-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+76            android:exported="true"
+76-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+77            android:permission="android.permission.DUMP" >
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+78            <intent-filter>
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+79                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+80            </intent-filter>
+81            <intent-filter>
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+82                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+83            </intent-filter>
+84            <intent-filter>
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+85                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+86            </intent-filter>
+87            <intent-filter>
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+88                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mandanyaina/.gradle/caches/transforms-3/820e62f0b30c90bc6c88badac0db92dc/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+89            </intent-filter>
+90        </receiver>
+91    </application>
+92
+93</manifest>
