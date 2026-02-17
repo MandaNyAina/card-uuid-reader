@@ -1,0 +1,65 @@
+EXEMPLES DE FICHIERS GENERES PAR L'APPLICATION
+==============================================
+
+FICHIER SCAN INDIVIDUEL
+-----------------------
+Nom: scan_20260217_184530_123.json
+Emplacement: /sdcard/Android/data/com.cardreader.app/files/scans/
+
+Contenu:
+{
+  "uid": "04:A1:B2:C3:D4:E5:F6",
+  "timestamp": "2026-02-17T18:45:30.123Z",
+  "cardType": "MIFARE_CLASSIC",
+  "scanMode": "individual"
+}
+
+FICHIER SCAN BATCH
+------------------
+Nom: batch_20260217_184530.json
+Emplacement: /sdcard/Android/data/com.cardreader.app/files/scans/
+
+Contenu:
+{
+  "sessionStart": "2026-02-17T18:45:30Z",
+  "sessionEnd": "2026-02-17T18:48:15Z",
+  "scanMode": "batch",
+  "totalCards": 3,
+  "cards": [
+    {
+      "uid": "04:A1:B2:C3:D4:E5:F6",
+      "timestamp": "2026-02-17T18:45:35Z",
+      "cardType": "MIFARE_CLASSIC"
+    },
+    {
+      "uid": "04:B1:C2:D3:E4:F5:A6",
+      "timestamp": "2026-02-17T18:46:12Z",
+      "cardType": "MIFARE_CLASSIC"
+    },
+    {
+      "uid": "04:C1:D2:E3:F4:A5:B6",
+      "timestamp": "2026-02-17T18:47:45Z",
+      "cardType": "MIFARE_CLASSIC"
+    }
+  ]
+}
+
+TYPES DE CARTES DETECTES
+-------------------------
+- MIFARE_CLASSIC: Carte MIFARE Classic (S50, S51K, etc.)
+- MIFARE_PLUS: Carte MIFARE Plus
+- MIFARE_PRO: Carte MIFARE Pro
+- NFC_A: Carte NFC Type A générique
+- UNKNOWN: Type non identifié
+
+FORMAT UID
+----------
+Format hexadécimal avec séparation par deux-points
+Exemples:
+- UID 4 octets: 04:A1:B2:C3
+- UID 7 octets: 04:A1:B2:C3:D4:E5:F6
+
+FORMAT TIMESTAMP
+----------------
+Format ISO 8601 UTC
+Exemple: 2026-02-17T18:45:30.123Z

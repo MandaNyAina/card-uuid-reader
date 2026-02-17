@@ -1,0 +1,125 @@
+APPLICATION ANDROID - LECTEUR NFC POUR CARTES MIFARE
+====================================================
+
+DESCRIPTION
+-----------
+Application Android native en Kotlin permettant de scanner les cartes NFC MIFARE Classic S51K 
+et d'enregistrer les UIDs dans des fichiers JSON accessibles via ADB ou explorateur de fichiers.
+
+FONCTIONNALITES PRINCIPALES
+---------------------------
+1. Deux modes de scan:
+   - Mode individuel: Chaque carte scannée crée son propre fichier JSON
+   - Mode batch: Session de scan multiple avec un fichier JSON pour tout le lot
+
+2. Détection automatique des cartes NFC
+3. Extraction et affichage de l'UID
+4. Stockage JSON structuré avec métadonnées
+5. Interface utilisateur simple et intuitive
+6. Compatible avec tous les outils ADB
+
+STRUCTURE DU PROJET
+-------------------
+card-reader/
+├── app/
+│   ├── src/main/
+│   │   ├── java/com/cardreader/app/
+│   │   │   ├── MainActivity.kt          (Activity principale, gestion NFC et UI)
+│   │   │   ├── Card.kt                  (Modèles de données)
+│   │   │   ├── ScanMode.kt              (Enum modes et état session)
+│   │   │   ├── CardStorage.kt           (Gestion fichiers JSON)
+│   │   │   ├── NfcReader.kt             (Lecture cartes MIFARE)
+│   │   │   └── CardAdapter.kt           (Adaptateur RecyclerView)
+│   │   ├── res/
+│   │   │   ├── layout/
+│   │   │   │   ├── activity_main.xml    (Layout principal)
+│   │   │   │   └── item_card.xml        (Layout item liste)
+│   │   │   ├── values/
+│   │   │   │   └── strings.xml          (Ressources texte)
+│   │   │   └── xml/
+│   │   │       └── nfc_tech_filter.xml  (Filtres technologies NFC)
+│   │   └── AndroidManifest.xml          (Configuration app, permissions)
+│   ├── build.gradle.kts                 (Configuration Gradle app)
+│   └── proguard-rules.pro               (Règles ProGuard)
+├── gradle/
+│   └── wrapper/
+│       └── gradle-wrapper.properties    (Configuration Gradle Wrapper)
+├── build.gradle.kts                     (Configuration Gradle racine)
+├── settings.gradle.kts                  (Configuration projet)
+├── gradle.properties                    (Propriétés Gradle)
+├── build-apk.sh                         (Script build automatique)
+├── README.txt                           (Instructions utilisation)
+├── INSTRUCTIONS_COMPILATION.txt         (Guide compilation)
+└── EXEMPLES_FICHIERS.txt                (Exemples de sorties JSON)
+
+TECHNOLOGIES UTILISEES
+----------------------
+- Langage: Kotlin 1.9.20
+- SDK Android: API 21-34 (Android 5.0 à 14)
+- Build: Gradle 8.2
+- Bibliothèques:
+  - AndroidX Core KTX
+  - Material Design Components
+  - RecyclerView
+  - Gson (sérialisation JSON)
+- NFC: Android NFC API
+  - NfcAdapter
+  - MifareClassic
+  - NfcA
+
+FICHIERS GENERES
+-----------------
+Répertoire: /sdcard/Android/data/com.cardreader.app/files/scans/
+
+Mode individuel: scan_YYYYMMDD_HHMMSS_mmm.json
+Mode batch: batch_YYYYMMDD_HHMMSS.json
+
+COMPILATION
+-----------
+Voir INSTRUCTIONS_COMPILATION.txt pour les détails complets
+
+Méthode rapide:
+1. Ouvrir dans Android Studio
+2. Connecter appareil Android avec NFC
+3. Run (Shift+F10)
+
+UTILISATION
+-----------
+1. Lancer l'application
+2. Choisir le mode (individuel ou batch)
+3. Si mode batch: cliquer "Démarrer session"
+4. Approcher les cartes du téléphone
+5. Si mode batch: cliquer "Terminer session"
+6. Les fichiers JSON sont créés automatiquement
+
+RECUPERATION DES DONNEES
+------------------------
+Avec ADB:
+adb pull /sdcard/Android/data/com.cardreader.app/files/scans/ ./export/
+
+Sans ADB:
+Utiliser un explorateur de fichiers Android pour naviguer vers le dossier
+
+COMPATIBILITE
+-------------
+- Android 5.0 (API 21) et supérieur
+- Appareil avec puce NFC obligatoire
+- Testé avec cartes MIFARE Classic S51K
+- Compatible avec autres cartes MIFARE et NFC Type A
+
+PERMISSIONS REQUISES
+--------------------
+- NFC: Lecture des tags NFC
+- WRITE_EXTERNAL_STORAGE: Stockage fichiers (Android <10 uniquement)
+
+SECURITE
+--------
+- Aucune permission internet
+- Données stockées localement uniquement
+- Pas de collecte ou transmission de données
+- Code source complet fourni
+
+VERSION
+-------
+Version: 1.0
+Date: Février 2026

@@ -1,0 +1,70 @@
+INSTRUCTIONS DE COMPILATION - Lecteur NFC CardReader
+====================================================
+
+OPTION 1: Avec Android Studio (Recommandé)
+------------------------------------------
+1. Ouvrir Android Studio
+2. File > Open > Sélectionner le dossier card-reader
+3. Attendre la synchronisation Gradle (première fois peut prendre plusieurs minutes)
+4. Connecter un appareil Android via USB avec:
+   - Mode développeur activé
+   - Débogage USB activé
+   - NFC activé
+5. Cliquer sur le bouton "Run" (triangle vert) ou Shift+F10
+6. L'APK sera installé et lancé automatiquement
+
+OPTION 2: En ligne de commande
+-------------------------------
+Prérequis:
+- Android SDK installé
+- Variable ANDROID_HOME définie
+- Java JDK 17 installé
+
+Commandes:
+cd /Users/novity/Project/card-reader
+./build-apk.sh
+
+L'APK sera dans: app/build/outputs/apk/debug/app-debug.apk
+
+Installation manuelle:
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+
+OPTION 3: Build Release (pour distribution)
+-------------------------------------------
+./gradlew assembleRelease
+
+APK non signé dans: app/build/outputs/apk/release/app-release-unsigned.apk
+
+Pour signer l'APK:
+1. Créer un keystore
+2. Configurer signing dans app/build.gradle.kts
+3. Recompiler
+
+VERIFICATION NFC
+----------------
+Vérifier que l'appareil supporte NFC:
+adb shell pm list features | grep nfc
+
+Activer NFC:
+Paramètres > Connexions > NFC et paiement > Activer NFC
+
+RECUPERATION DES FICHIERS SCANNES
+----------------------------------
+adb pull /sdcard/Android/data/com.cardreader.app/files/scans/ ./mes-scans/
+
+Tous les fichiers JSON seront téléchargés dans le dossier ./mes-scans/
+
+DEBOGAGE
+--------
+Voir les logs en temps réel:
+adb logcat | grep CardReader
+
+Désinstaller l'application:
+adb uninstall com.cardreader.app
+
+PROBLEMES COURANTS
+------------------
+1. "NFC not supported": Appareil sans puce NFC
+2. "Enable NFC": Aller dans Paramètres > NFC
+3. Erreur Gradle sync: Vérifier connexion internet et versions SDK
+4. APK ne s'installe pas: Vérifier USB debugging et autoriser l'installation

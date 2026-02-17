@@ -1,0 +1,4 @@
+-keep class com.cardreader.app.** { *; }
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class com.google.gson.** { *; }
